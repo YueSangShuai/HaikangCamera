@@ -1,9 +1,9 @@
 #include <iostream>
-#include "./HaikangCamera/CameraGray/HaiKangCameraGray.h"
-
+//#include "./HaikangCamera/CameraGray/HaiKangCameraGray.h"
+#include"./HaikangCamera/CameraRGB/HaiKangCameraRGB.h"
 int main() {
-    HaiKangCameraGray HaiKang;
-
+//    HaiKangCameraGray HaiKang;
+    HaiKangCameraRGB HaiKang;
     HaiKang.StartDevice(0);
     // 设置分辨率
     HaiKang.SetResolution(416, 416);
@@ -22,6 +22,7 @@ int main() {
     //HaiKang.Set_BALANCE(0, 1690);
     //HaiKang.Set_BALANCE(1, 1024);
     //HaiKang.Set_BALANCE(2, 2022);
+
     while(true){
         cv::Mat frame;
         auto HaiKang_stauts = HaiKang.GetMat(frame);

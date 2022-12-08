@@ -12,7 +12,9 @@ include_directories(${Fmt_INCLUDE_DIRS}) #加这一句
 
 add_executable(HaikangCamera main.cpp
 
-        HaikangCamera/CameraRGB/HaiKangCameraRGB.cpp HaikangCamera/CameraRGB/HaiKangCameraRGB.h HaikangCamera/CameraGray/HaiKangCameraGray.cpp HaikangCamera/CameraGray/HaiKangCameraGray.h)
+        HaikangCamera/CameraRGB/HaiKangCameraRGB.cpp HaikangCamera/CameraRGB/HaiKangCameraRGB.h
+#        HaikangCamera/CameraGray/HaiKangCameraGray.cpp HaikangCamera/CameraGray/HaiKangCameraGray.h
+        )
 
 
 
