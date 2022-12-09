@@ -19,12 +19,6 @@
 using namespace std;
 using namespace cv;
 
-typedef enum _GAIN_MODE_
-{
-    R_CHANNEL,
-    G_CHANNEL,
-    B_CHANNEL
-} GAIN_MODE;
 
 class HaiKangCameraGray
 {
@@ -53,9 +47,6 @@ public:
 
     //设置曝光时间
     bool SetExposureTime(float ExposureTime);
-
-    //设置曝光增益
-    bool SetGAIN(int value, int ExpGain);
 
     //自动白平衡
     bool Set_Auto_BALANCE();

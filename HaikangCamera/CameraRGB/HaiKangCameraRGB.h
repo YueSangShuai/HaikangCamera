@@ -19,7 +19,7 @@
 using namespace std;
 using namespace cv;
 
-typedef enum _GAIN_MODE_
+typedef enum _RGB_GAIN_MODE_
 {
     R_CHANNEL,
     G_CHANNEL,

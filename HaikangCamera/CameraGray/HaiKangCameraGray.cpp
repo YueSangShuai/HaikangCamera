@@ -184,48 +184,6 @@ bool HaiKangCameraGray::SetExposureTime(float ExposureTime)
     }
 }
 
-bool HaiKangCameraGray::SetGAIN(int value, int ExpGain)
-{   //曝光增益
-    if(value == 0)
-    {
-        nRet = MV_CC_SetEnumValue(handle, "GainMode", R_CHANNEL);
-    }
-    else if(value == 1)
-    {
-        nRet = MV_CC_SetEnumValue(handle, "GainMode", G_CHANNEL);
-    }
-    else if(value == 2)
-    {
-        nRet = MV_CC_SetEnumValue(handle, "GainMode", B_CHANNEL);
-    }
-    else
-    {
-        nRet = MV_CC_SetFloatValue(handle, "Gain", ExpGain);
-        if(nRet == MV_OK)
-        {
-            fmt::print(fmt::fg(fmt::color::blue), "[CAMERA] 设置曝光增益成功！\n");
-            return true;
-        }
-        else
-        {
-            fmt::print(fmt::fg(fmt::color::red), "[CAMERA] 设置曝光增益失败！\n");
-            return false;
-        }
-    }
-
-    nRet = MV_CC_SetFloatValue(handle, "Gain", ExpGain);
-    if(nRet == MV_OK)
-    {
-        fmt::print(fmt::fg(fmt::color::blue), "[CAMERA] 设置曝光增益成功！\n");
-        return true;
-    }
-    else
-    {
-        fmt::print(fmt::fg(fmt::color::red), "[CAMERA] 设置曝光增益失败！\n");
-        return false;
-    }
-}
-
 bool HaiKangCameraGray::Set_Auto_BALANCE()
 {   //自动白平衡（具有记忆功能）
     this->nRet = MV_CC_SetEnumValue(this->handle, "BalanceWhiteAuto", 1);
